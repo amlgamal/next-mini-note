@@ -69,52 +69,48 @@ export default function NotesPage() {
   return (
     <div className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-2xl mx-auto">
-
         {/* Title */}
         <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
           Notes App
         </h1>
 
         {/* Form */}
-       <div className="bg-white p-4 rounded-xl shadow-md mb-6 space-y-3">
-  <input
-    className="w-full p-2 border rounded-md outline-none focus:ring-2 focus:ring-green-500"
-    placeholder="Title"
-    value={title}
-    onChange={(e) => setTitle(e.target.value)}
-  />
+        <div className="bg-white p-4 rounded-xl shadow-md mb-6 space-y-3">
+          <input
+            className="w-full p-2 border rounded-md outline-none focus:ring-2 focus:ring-green-500"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
 
-  <input
-    className="w-full p-2 border rounded-md outline-none focus:ring-2 focus:ring-green-500"
-    placeholder="Content"
-    value={content}
-    onChange={(e) => setContent(e.target.value)}
-  />
+          <input
+            className="w-full p-2 border rounded-md outline-none focus:ring-2 focus:ring-green-500"
+            placeholder="Content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
 
-  {editId ? (
-    <button
-      onClick={handleUpdate}
-      className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
-    >
-      Update Note
-    </button>
-  ) : (
-    <button
-      onClick={handleCreate}
-      className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
-    >
-      Add Note
-    </button>
-  )}
-</div>
+          {editId ? (
+            <button
+              onClick={handleUpdate}
+              className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+            >
+              Update Note
+            </button>
+          ) : (
+            <button
+              onClick={handleCreate}
+              className="w-full bg-green-500 text-white py-2 rounded-md hover:bg-green-600 transition"
+            >
+              Add Note
+            </button>
+          )}
+        </div>
 
         {/* Notes List */}
         <div className="space-y-4">
           {notes.map((note) => (
-            <div
-              key={note._id}
-              className="bg-white p-4 rounded-xl shadow-md"
-            >
+            <div key={note._id} className="bg-white p-4 rounded-xl shadow-md">
               <h3 className="text-xl font-semibold text-gray-800">
                 {note.title}
               </h3>
@@ -139,7 +135,6 @@ export default function NotesPage() {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );
