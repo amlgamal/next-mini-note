@@ -4,10 +4,12 @@ import { NextResponse } from "next/server";
 
 // Gets all notes
 export async function GET() {
+   console.log("GET HIT");
   try {
     await connectedDB();
 
     const notes = await Note.find();
+console.log("hello");
 
     return NextResponse.json(notes);
   } catch (err) {
